@@ -1,0 +1,34 @@
+[package]
+name = "git-cheatsheet"
+version = "0.1.0"
+edition = "2021"
+description = "A keyboard-driven TUI git commands cheatsheet"
+authors = ["Frank"]
+license = "MIT"
+repository = "https://github.com/franklinnolasco7/git-cheatsheet"
+homepage = "https://github.com/franklinnolasco7/git-cheatsheet"
+keywords = ["git", "tui", "cheatsheet", "cli", "terminal"]
+categories = ["command-line-utilities"]
+
+[[bin]]
+name = "git-cheat"
+path = "src/main.rs"
+
+[dependencies]
+ratatui = "0.26"
+crossterm = "0.27"
+
+[package.metadata.deb]
+maintainer = "Frank <franklinnolasco7@github>"
+section = "utils"
+assets = [
+    ["target/release/git-cheat", "usr/bin/", "755"],
+    ["LICENSE", "usr/share/doc/git-cheat/", "644"],
+    ["README.md", "usr/share/doc/git-cheat/", "644"],
+]
+
+[package.metadata.generate-rpm]
+assets = [
+    { source = "target/release/git-cheat", dest = "/usr/bin/git-cheat", mode = "755" },
+    { source = "LICENSE", dest = "/usr/share/licenses/git-cheat/LICENSE", mode = "644" },
+]
