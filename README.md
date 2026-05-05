@@ -2,6 +2,8 @@
 
 Blazing fast terminal git cheatsheet. Keyboard-driven vim like controls. Easy peak of git commands with full description and examples.
 
+<img width="1920" height="1080" alt="demo-compressed" src="https://github.com/user-attachments/assets/9a6c6350-03b5-4ee7-8ad6-2fbb823784ae" />
+
 ## Install
 
 **Binaries**
