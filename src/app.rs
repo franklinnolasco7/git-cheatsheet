@@ -1,4 +1,4 @@
-use crate::data::{Command, CATEGORIES};
+use crate::data::{CATEGORIES, Command};
 
 #[derive(PartialEq)]
 pub enum Pane {
