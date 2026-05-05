@@ -11,9 +11,9 @@ use app::{App, Mode, Pane};
 use crossterm::{
     event::{self, DisableMouseCapture, EnableMouseCapture, Event, KeyCode, KeyModifiers},
     execute,
-    terminal::{disable_raw_mode, enable_raw_mode, EnterAlternateScreen, LeaveAlternateScreen},
+    terminal::{EnterAlternateScreen, LeaveAlternateScreen, disable_raw_mode, enable_raw_mode},
 };
-use ratatui::{backend::CrosstermBackend, Terminal};
+use ratatui::{Terminal, backend::CrosstermBackend};
 
 const TICK_RATE_MS: u64 = 100;
 
@@ -35,8 +35,8 @@ fn main() -> Result<(), io::Error> {
             .checked_sub(last_tick.elapsed())
             .unwrap_or_default();
 
-        if event::poll(timeout)? {
-            if let Event::Key(key) = event::read()? {
+        if event::poll(timeout)?
+            && let Event::Key(key) = event::read()? {
                 match app.mode {
                     Mode::Help => match key.code {
                         KeyCode::Char('q') | KeyCode::Char('?') | KeyCode::Esc => {
@@ -101,7 +101,6 @@ fn main() -> Result<(), io::Error> {
                         _ => {}
                     },
                 }
-            }
         }
 
         if last_tick.elapsed() >= tick_rate {
