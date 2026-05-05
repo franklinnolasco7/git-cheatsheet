@@ -2,8 +2,6 @@
 
 Blazing fast terminal git cheatsheet. Keyboard-driven vim like controls. Easy peak of git commands with full description and examples.
 
-<img width="1920" height="1080" alt="demo-compressed" src="https://github.com/user-attachments/assets/9a6c6350-03b5-4ee7-8ad6-2fbb823784ae" />
-
 ## Install
 
 **Binaries**
@@ -40,6 +38,12 @@ cargo install git-cheatsheet
 Auto-detects backend: `xclip` → `xsel` → `wl-copy` → `pbcopy`
 
 If `y` yank doesn't work on Linux, install one of them using your package manager.
+
+# Screenshots
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/d1d2dbd6-825b-48f2-9521-4c5301675efa" />
+<br></br>
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/52c56b33-5fd5-449f-9be5-da774f152c08" />
 
 ## Development & Contributing
 
